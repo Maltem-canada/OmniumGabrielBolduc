@@ -1,0 +1,96 @@
+.header {
+  font-size: .8em;
+  z-index: 9;
+  color: var(--es_white);
+  background-color: var(--es_transparent);
+  width: 100%;
+  margin-bottom: 100px;
+  &-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &-button {
+      background-color: var(--es_green);
+      color: var(--es_white) !important;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px 10px;
+    }
+    > div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: space-around;
+      > * {
+        margin-left: 20px;
+        margin-right: 20px;
+        &:hover {
+          color: var(--es_green);
+          text-decoration: underline;
+        }
+      }
+      :first-child {
+        margin-left: 0;
+        padding-left: 20px;
+      }
+      :last-child {
+        padding-right: 20px;
+      }
+    }
+    select {
+      border: 1px solid var(--es_grey);
+      font-size: 1em;
+      padding: 10px;
+      &::-ms-expand {
+        display: none;
+      }
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      &:focus {
+        outline:none;
+      }
+      option {
+        padding: 10px;
+      }
+    }
+  }
+  &-scroll {
+    width: 100%;
+    height: 5px;
+    background: transparent;
+    &-indicator {
+      background-color: var(--es_green);
+      height: 5px;
+    }
+    img {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      margin-top: -17px;
+      margin-left: -15px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+  }
+  &-logo {
+    height: 40px;
+    margin-top: 6px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.header-fixed {
+  position: fixed;
+}
+.header-handler {
+  display: none;
+}

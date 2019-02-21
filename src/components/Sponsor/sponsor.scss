@@ -1,0 +1,72 @@
+.sponsor {
+  padding: 5vw;
+  &-presentation {
+    &-header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      &-title {
+        text-align: left;
+      }
+      &-button {
+        background-color: var(--es_green);
+        color: var(--es_white) !important;
+        text-decoration: none;
+        padding: .5vw 1vw;
+        font-size: 1vw;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      align-content: center;
+      img {
+        width: 20vw;
+        margin: 2vw 0;
+      }
+    }
+  }
+  &-sponsor {
+    margin-top: 5vw;
+    &-header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 2vw;
+      &-title {
+        text-align: left;
+      }
+      &-button {
+        background-color: var(--es_green);
+        color: var(--es_white) !important;
+        text-decoration: none;
+        padding: .5vw 1vw;
+        font-size: 1vw;
+      }
+    }
+    &-content {
+      .slick-slide {
+        > div {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+          align-items: center;
+          align-content: center;
+          img {
+            width: 10vw !important;
+          }
+        }
+      }
+    }
+  }
+}
