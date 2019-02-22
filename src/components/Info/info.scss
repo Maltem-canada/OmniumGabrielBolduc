@@ -16,7 +16,7 @@
     align-content: start;
     text-align: center;
     img {
-      height: 5vw;
+      height: 10vw;
     }
   }
   &-sub {
@@ -32,6 +32,19 @@
       color: var(--es_white);
       background: var(--es_green);
       padding: 10px 20px;
+    }
+  }
+}
+@media (max-width: 1025px) {
+  .info {
+    &-content {
+      font-size: 3vw;
+    }
+    &-sub {
+      font-size: 3vw;
+    }
+    &-button {
+      font-size: 3vw;
     }
   }
 }

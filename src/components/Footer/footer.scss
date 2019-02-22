@@ -1,6 +1,6 @@
 .footer {
   padding-top: 30px;
-  font-size: .7em;
+  font-size: 1vw;
   color: #EEEEEE;
   background-color: var(--es_black);
   display: flex;
@@ -45,13 +45,18 @@
   &-closure {
     margin-top: 20px;
     background-color: black;
-    padding: 16px;
+    padding: 30px;
     text-align: center;
     color: var(--es_grey);
-    font-size: .8em;
+    font-size: 1em;
     display: block !important;
     a {
       text-decoration: underline;
     }
+  }
+}
+@media (max-width: 1025px) {
+  .footer {
+    font-size: 3vw;
   }
 }

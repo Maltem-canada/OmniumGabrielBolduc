@@ -5,3 +5,11 @@
     margin-top: 70vh;
   }
 }
+@media (max-width: 1025px) {
+  .transition {
+    height: 40vh;
+    &-history-anchor {
+      margin-top: 20vh;
+    }
+  }
+}

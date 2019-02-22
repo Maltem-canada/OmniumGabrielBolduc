@@ -19,6 +19,8 @@ export class Header extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.changeLanguage = this.changeLanguage.bind(this);
+    this.headerClicked = this.headerClicked.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       percentageScroll: 0,
     };
@@ -28,10 +30,12 @@ export class Header extends Component {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('mousedown', this.handleClickOutside);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('mousedown', this.handleClickOutside);
   }
 
   setWrapperRef(node) {
@@ -45,6 +49,33 @@ export class Header extends Component {
     this.setState({
       percentageScroll: (scrollPos) * 100 / (documentHeight - windowHeight),
     });
+  }
+
+  headerClicked() {
+    const { displayHeader } = this.state;
+    this.setState({
+      displayHeader: (displayHeader === 'hide') ? 'show' : 'hide',
+    });
+  }
+
+  handleClickOutside(event) {
+    const {
+      wrapperRef,
+      state: {
+        displayHeader,
+      },
+    } = this;
+    const isMenuHandler = event.target.className.constructor.name === 'SVGAnimatedString';
+    if (
+      wrapperRef
+      && !wrapperRef.contains(event.target)
+      && displayHeader === 'show'
+      && !isMenuHandler
+    ) {
+      this.setState({
+        displayHeader: 'hide',
+      });
+    }
   }
 
   changeLanguage(event) {

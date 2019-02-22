@@ -12,6 +12,7 @@
         text-align: left;
       }
       &-button {
+        text-align: center;
         background-color: var(--es_green);
         color: var(--es_white) !important;
         text-decoration: none;
@@ -46,6 +47,7 @@
         text-align: left;
       }
       &-button {
+        text-align: center;
         background-color: var(--es_green);
         color: var(--es_white) !important;
         text-decoration: none;
@@ -54,6 +56,16 @@
       }
     }
     &-content {
+      &-item {
+        height: 10vw;
+        width: 10vw;
+        overflow: hidden;
+        img {
+          padding: 2vw;
+          max-width: 10vw;
+          max-height: 10vw;
+        }
+      }
       .slick-slide {
         > div {
           display: flex;
@@ -62,9 +74,26 @@
           justify-content: space-around;
           align-items: center;
           align-content: center;
-          img {
-            width: 10vw !important;
-          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1025px) {
+  .sponsor {
+    &-presentation {
+      &-header {
+        &-button {
+          max-width: 30vw;
+          font-size: 3vw;
+        }
+      }
+    }
+    &-sponsor {
+      &-header {
+        &-button {
+          font-size: 3vw;
+          max-width: 30vw;
         }
       }
     }

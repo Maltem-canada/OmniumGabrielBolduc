@@ -47,7 +47,7 @@ export class Footer extends Component {
         <div className="footer-closure">
           Designed and Developed by
           {' '}
-          <a rel="noopener noreferrer" target="_blank" href="http://maltem.ca">Maltem</a>
+          <a rel="noopener noreferrer" target="_blank" href="http://maltem.ca">Maltem Canada</a>
         </div>
       </div>
     );

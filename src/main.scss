@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: MaltemFont;
-  src: url('./assets/font/Crystal.ttf');
+  src: url('./assets/font/kalinga.ttf');
 }
 @font-face {
   font-family: MaltemSecondFont;
@@ -42,7 +42,7 @@ html, body {
   justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
-  font-family: Arial, "MaltemFont";
+  font-family: "MaltemFont";
   background-color: var(--es_white);
 }
 
@@ -71,6 +71,11 @@ h1 {
   font-size: 3vw;
   font-family: MaltemSecondFont;
   margin-top: 0;
+}
+@media (max-width: 1025px) {
+  h1 {
+    font-size: 7vw;
+  }
 }
 
 img {

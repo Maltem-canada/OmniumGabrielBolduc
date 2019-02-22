@@ -27,3 +27,17 @@
     }
   }
 }
+@media (max-width: 1025px) {
+  .package {
+    &-content {
+      &-content {
+        font-size: 3vw;
+      }
+      &-price {
+        font-size: 4vw;
+      }
+      > div {
+      }
+    }
+  }
+}

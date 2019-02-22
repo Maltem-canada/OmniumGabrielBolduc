@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import Image from '../Common/Image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './sponsor.scss';
+import config from '../../config';
 
 export class Sponsor extends Component {
   static propTypes = {
@@ -65,7 +65,7 @@ export class Sponsor extends Component {
           <div className="sponsor-presentation-content">
             {
               presentationLogos.map(logo => (
-                <Image image={logo} key={logo.id} />
+                <img alt={logo.name.split('.')[0]} key={logo.id} src={config.backendURL + logo.url} />
               ))
             }
           </div>
@@ -85,7 +85,7 @@ export class Sponsor extends Component {
             <Slider {...settings}>
               {
                 sponsorLogos.map(logo => (
-                  <Image image={logo} key={logo.id} />
+                  <div className="sponsor-sponsor-content-item"><img alt={logo.name.split('.')[0]} key={logo.id} src={config.backendURL + logo.url} /></div>
                 ))
               }
             </Slider>
