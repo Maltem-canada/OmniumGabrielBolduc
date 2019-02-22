@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import config from '../../config';
+import Image from '../Common/Image';
 import './history.scss';
 
 export class History extends Component {
@@ -42,11 +42,7 @@ export class History extends Component {
                   (historyitems.length - 1) === i
                   && (
                     <div className="history-item-header-right">
-                      <img
-                        className="history-item-header-right-image"
-                        src={config.backendURL + enfantSoleil.image.url}
-                        alt={enfantSoleil.description}
-                      />
+                      <Image className="history-item-header-right-image" image={enfantSoleil} />
                       <a className="history-item-header-right-button" target={donation.doesOpenNewWindow ? '_blank' : ''} href={donation.link}>{donation.text}</a>
                     </div>
                   )
@@ -61,7 +57,7 @@ export class History extends Component {
           ))
         }
         <div className="history-last">
-          <img src={config.backendURL + lastPhoto.image.url} alt={lastPhoto.description} />
+          <Image image={lastPhoto} />
         </div>
       </div>
     );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import config from '../../config';
+import Image from '../Common/Image';
 import './team.scss';
 
 export class Team extends Component {
@@ -33,10 +33,7 @@ export class Team extends Component {
           {
             members.map(member => (
               <div key={member.id} className="team-content-member">
-                <img
-                  src={config.backendURL + member.photo.image.url}
-                  alt={member.photo.description}
-                />
+                <Image image={member.photo} />
                 <div className="team-content-member-description">{member.name}</div>
               </div>
             ))

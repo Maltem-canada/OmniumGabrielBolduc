@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import config from '../../config';
+import Image from '../Common/Image';
 import './gallery.scss';
 
 export class Gallery extends Component {
@@ -32,11 +32,7 @@ export class Gallery extends Component {
             .galleryPhotos
             .slice(0, 4)
             .map(photo => (
-              <img
-                key={photo.id}
-                src={config.backendURL + photo.url}
-                alt={photo.name.split('.')[0]}
-              />
+              <Image image={{ image: photo }} key={photo.id} />
             ))
         }
       </div>

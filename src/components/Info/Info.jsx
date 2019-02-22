@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import config from '../../config';
+import Image from '../Common/Image';
 import './info.scss';
 
 export class Info extends Component {
@@ -35,7 +35,7 @@ export class Info extends Component {
           {
             items.map(item => (
               <div key={item.id}>
-                <img src={config.backendURL + item.image.image.url} alt={item.image.description} />
+                <Image image={item.image} />
                 <div>{item.content}</div>
               </div>
             ))

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import { setLanguage } from '../../services/language';
-import config from '../../config';
+import Image from '../Common/Image';
 import './header.scss';
 
 export class Header extends Component {
@@ -87,7 +87,7 @@ export class Header extends Component {
         <div className="header-content" ref={this.setWrapperRef}>
           <div>
             <a href="#welcome">
-              <img className="header-logo" src={config.backendURL + logo.image.url} alt={logo.description} />
+              <Image image={logo} />
             </a>
             <a href="#info">{info}</a>
             <a href="#packages">{packages}</a>
@@ -103,7 +103,7 @@ export class Header extends Component {
         </div>
         <div className="header-scroll">
           <div className="header-scroll-indicator" style={indicatorStyle} />
-          <img src={config.backendURL + ball.image.url} style={imageStyle} alt={ball.description} />
+          <Image image={ball} style={imageStyle} />
         </div>
         <FontAwesomeIcon onClick={this.headerClicked} className="header-handler" icon={faGripLines} />
       </nav>

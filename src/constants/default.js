@@ -50,6 +50,7 @@ export default {
   team: {
     members: [],
     title: '',
+    defaultProfile: image,
   },
   transition: image,
   welcome: {
