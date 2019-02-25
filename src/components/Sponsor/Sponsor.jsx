@@ -85,7 +85,9 @@ export class Sponsor extends Component {
             <Slider {...settings}>
               {
                 sponsorLogos.map(logo => (
-                  <div className="sponsor-sponsor-content-item"><img alt={logo.name.split('.')[0]} key={logo.id} src={config.backendURL + logo.url} /></div>
+                  <div key={logo.id} className="sponsor-sponsor-content-item">
+                    <img alt={logo.name.split('.')[0]} key={logo.id} src={config.backendURL + logo.url} />
+                  </div>
                 ))
               }
             </Slider>
