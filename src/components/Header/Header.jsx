@@ -23,6 +23,7 @@ export class Header extends Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       percentageScroll: 0,
+      displayHeader: 'hide',
     };
   }
 
@@ -104,6 +105,7 @@ export class Header extends Component {
     } = this.props;
     const {
       percentageScroll,
+      displayHeader,
     } = this.state;
     const indicatorStyle = {
       width: `${percentageScroll}%`,
@@ -115,21 +117,28 @@ export class Header extends Component {
 
     return (
       <nav className="header header-fixed">
-        <div className="header-content" ref={this.setWrapperRef}>
+        <div className={`header-content ${displayHeader}`} ref={this.setWrapperRef}>
           <div>
-            <a href="#welcome">
+            <a onClick={this.headerClicked} href="#welcome">
               <Image image={logo} />
             </a>
-            <a href="#info">{info}</a>
-            <a href="#packages">{packages}</a>
-            <a href="#history">{history}</a>
-            <a href="#sponsors">{sponsors}</a>
-            <a href="#photos">{photos}</a>
-            <a href="#team">{team}</a>
-            <a href="#contact">{contact}</a>
+            <a onClick={this.headerClicked} href="#info">{info}</a>
+            <a onClick={this.headerClicked} href="#packages">{packages}</a>
+            <a onClick={this.headerClicked} href="#history">{history}</a>
+            <a onClick={this.headerClicked} href="#sponsors">{sponsors}</a>
+            <a onClick={this.headerClicked} href="#photos">{photos}</a>
+            <a onClick={this.headerClicked} href="#team">{team}</a>
+            <a onClick={this.headerClicked} href="#contact">{contact}</a>
           </div>
           <div>
-            <a className="header-content-button" target={subscibe.doesOpenNewWindow ? '_blank' : ''} href={subscibe.link}>{subscibe.text}</a>
+            <a
+              onClick={this.headerClicked}
+              className="header-content-button"
+              target={subscibe.doesOpenNewWindow ? '_blank' : ''}
+              href={subscibe.link}
+            >
+              {subscibe.text}
+            </a>
           </div>
         </div>
         <div className="header-scroll">
