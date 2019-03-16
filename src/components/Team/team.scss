@@ -1,6 +1,9 @@
 .team {
   padding: 5vw;
   &-title {
+    &[display=block] {
+      background: red;
+    }
     text-align: left;
   }
   &-content {

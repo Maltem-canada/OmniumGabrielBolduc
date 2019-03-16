@@ -35,7 +35,12 @@ export class Info extends Component {
           {
             items.map(item => (
               <div key={item.id}>
-                <Image image={item.image} />
+                <a
+                  href={item.linkclick ? item.linkclick.link : ''}
+                  target={item.linkclick && item.linkclick.doesOpenNewWindow ? '_blank' : ''}
+                >
+                  <Image image={item.image} />
+                </a>
                 <div>{item.content}</div>
               </div>
             ))
