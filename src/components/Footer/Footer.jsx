@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
+import maltemLogo from '../../assets/img/maltem.png';
 import './footer.scss';
 
 export class Footer extends Component {
@@ -45,9 +46,14 @@ export class Footer extends Component {
           </div>
         </div>
         <div className="footer-closure">
-          Designed and Developed by
+          <a rel="noopener noreferrer" target="_blank" href="http://maltem.ca">
+            <img alt="Maltem Canada white" src={maltemLogo} />
+          </a>
+          Généreusement conçu et développé par l&apos;équipe de
           {' '}
           <a rel="noopener noreferrer" target="_blank" href="http://maltem.ca">Maltem Canada</a>
+          {' '}
+          à Montréal
         </div>
       </div>
     );

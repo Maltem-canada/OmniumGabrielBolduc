@@ -50,6 +50,9 @@
     color: var(--es_grey);
     font-size: 1em;
     display: block !important;
+    img {
+      height: 1em;
+    }
     a {
       text-decoration: underline;
     }
