@@ -1,6 +1,7 @@
 .transition {
   height: 100vh;
   background-size: cover;
+  background-attachment: fixed;
   &-history-anchor {
     margin-top: 70vh;
   }
