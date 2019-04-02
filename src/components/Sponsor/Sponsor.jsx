@@ -42,7 +42,7 @@ export class Sponsor extends Component {
       slidesToScroll: 4,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 4000,
       initialSlide: 0,
       pauseOnFocus: false,
       pauseOnDotsHover: false,
