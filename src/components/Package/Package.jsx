@@ -34,14 +34,16 @@ export class Package extends Component {
                 <h1 className="package-content-title decorate-title">{item.title}</h1>
                 <div className="package-content-price">{item.price}</div>
                 <div className="package-content-content">{item.content}</div>
-                <a
-                  onClick={this.headerClicked}
-                  className="header-content-button package-content-button"
-                  target={subscibe.doesOpenNewWindow ? '_blank' : ''}
-                  href={subscibe.link}
-                >
-                  {subscibe.text}
-                </a>
+                <div className="package-content-button">
+                  <a
+                    onClick={this.headerClicked}
+                    className="header-content-button"
+                    target={subscibe.doesOpenNewWindow ? '_blank' : ''}
+                    href={subscibe.link}
+                  >
+                    {subscibe.text}
+                  </a>
+                </div>
               </div>
             ))
           }
