@@ -8,11 +8,14 @@
     align-items: center;
     align-content: center;
     margin-bottom: -15vw;
+    text-align: center;
     &-content {
+      text-align: left;
       white-space: pre;
       font-size: 1.5vw;
       line-height: 3vw;
       margin-top: 2vw;
+      margin-bottom: 2vw;
     }
     &-price {
       color: var(--es_green);
