@@ -58,6 +58,8 @@ export default {
     title: '',
     subTitle: '',
     editionNumber: '',
+    logo1: image,
+    logo2: image,
   },
   footer: {
     address: '',

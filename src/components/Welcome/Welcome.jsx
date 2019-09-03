@@ -23,6 +23,8 @@ export class Welcome extends Component {
           background: {
             image,
           },
+          logo1,
+          logo2,
           title,
           subTitle,
           editionNumber,
@@ -37,11 +39,17 @@ export class Welcome extends Component {
     return (
       <div className="welcome" style={style}>
         <div>
+          {logo1 && logo1.image
+            && <img alt="welcome 1" src={`${config.backendURL}${logo1.image.url}`} />
+          }
           <div className="welcome-title">
             <div>{editionNumber}</div>
             <div>{title}</div>
           </div>
           <div className="welcome-subtitle">{subTitle}</div>
+          {logo2 && logo2.image
+            && <img alt="welcome 2" src={`${config.backendURL}${logo2.image.url}`} />
+          }
         </div>
       </div>
     );
