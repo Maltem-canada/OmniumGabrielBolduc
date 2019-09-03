@@ -57,13 +57,16 @@
     }
     &-content {
       &-item {
-        height: 10vw;
-        width: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //height: 10vw;
+        //width: 10vw;
         overflow: hidden;
         img {
           padding: 2vw;
-          max-width: 10vw;
           max-height: 10vw;
+          width: 100%;
         }
       }
       .slick-slide {
