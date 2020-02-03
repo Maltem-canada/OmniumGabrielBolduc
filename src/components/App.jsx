@@ -6,7 +6,7 @@ import PackageComp from './Package/Package';
 import TransitionComp from './Transition/Transition';
 import HistoryComp from './History/History';
 import SponsorComp from './Sponsor/Sponsor';
-import GalleryComp from './Gallery/Gallery';
+import GalleriesComp from './Galleries/Galleries';
 import TeamComp from './Team/Team';
 
 export default class App extends Component {
@@ -49,7 +49,7 @@ export default class App extends Component {
           <TransitionComp />
           <HistoryComp />
           <SponsorComp />
-          <GalleryComp />
+          <GalleriesComp />
           <TeamComp />
         </SlideComponent>
         <div id="popup" className={classPopup}>{content}</div>

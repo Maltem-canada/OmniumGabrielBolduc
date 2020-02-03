@@ -1,5 +1,6 @@
 .sponsor {
   padding: 5vw;
+
   &-presentation {
     &-header {
       display: flex;
@@ -8,9 +9,11 @@
       justify-content: space-between;
       align-items: center;
       align-content: center;
+
       &-title {
         text-align: left;
       }
+
       &-button {
         text-align: center;
         background-color: var(--es_green);
@@ -20,6 +23,7 @@
         font-size: 1vw;
       }
     }
+
     &-content {
       display: flex;
       flex-direction: row;
@@ -27,14 +31,17 @@
       justify-content: space-evenly;
       align-items: center;
       align-content: center;
+
       img {
         width: 20vw;
         margin: 2vw 0;
       }
     }
   }
+
   &-sponsor {
     margin-top: 5vw;
+
     &-header {
       display: flex;
       flex-direction: row;
@@ -43,9 +50,11 @@
       align-items: center;
       align-content: center;
       margin-bottom: 2vw;
+
       &-title {
         text-align: left;
       }
+
       &-button {
         text-align: center;
         background-color: var(--es_green);
@@ -55,19 +64,23 @@
         font-size: 1vw;
       }
     }
+
     &-content {
       &-item {
-        height: 10vw;
-        width: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
+
         img {
-          padding: 2vw;
-          max-width: 10vw;
+          padding: 1vw;
           max-height: 10vw;
+          width: 100%;
         }
       }
+
       .slick-slide {
-        > div {
+        >div {
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
@@ -79,6 +92,7 @@
     }
   }
 }
+
 @media (max-width: 1025px) {
   .sponsor {
     &-presentation {
@@ -89,6 +103,7 @@
         }
       }
     }
+
     &-sponsor {
       &-header {
         &-button {

@@ -1,51 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { agglomerateFetchData } from '../../actions/agglomerate';
-import Image from '../Common/Image';
+import Carousel, { Modal, ModalGateway } from "react-images";
+import config from '../../config';
 import './gallery.scss';
 
 export class Gallery extends Component {
-  static propTypes = {
-    agglomerateFetch: PropTypes.func.isRequired,
-    agglomerate: PropTypes.objectOf(Object).isRequired,
-  };
 
-  componentDidMount() {
-    const { agglomerateFetch } = this.props;
-    agglomerateFetch();
+  state = { modalIsOpen: false }
+  toggleModal = () => {
+    this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
   }
 
   render() {
-    const {
-      agglomerate: {
-        galleries,
-      },
-    } = this.props;
-
-    const gallery = galleries[0] || { galleryPhotos: [] };
+    const { modalIsOpen } = this.state;
+    const { gallery } = this.props;
+    const photos = gallery.galleryPhotos.map(photo => ({ src: config.backendURL + photo.url }))
 
     return (
-      <div id="photos" className="gallery">
-        {
-          gallery
-            .galleryPhotos
-            .slice(0, 4)
-            .map(photo => (
-              <Image image={{ image: photo }} key={photo.id} />
-            ))
-        }
-      </div>
+      <span>
+        <span className="gallery-button" onClick={() => this.toggleModal()}>
+          {gallery.name}
+        </span>
+        <ModalGateway>
+          {modalIsOpen ? (
+            <Modal onClose={this.toggleModal}>
+              <Carousel views={photos} />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+      </span>
     );
   }
 }
 
-export const mapStateToProps = ({ agglomerate }) => ({
-  agglomerate,
-});
-
-export const mapDispatchToProps = dispatch => ({
-  agglomerateFetch: () => dispatch(agglomerateFetchData()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
+export default Gallery;

@@ -1,0 +1,23 @@
+.galleries {
+    background: var(--es_grey);
+    padding: 5vw;
+
+    &-header {
+        display: flex;
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-button {
+            padding: 1vh;
+            background-color: var(--es_green);
+            color: var(--es_white) !important;
+            margin: .5vw;
+            cursor: pointer;
+        }
+    }
+}
